@@ -53,15 +53,40 @@
             padding: 15px 30px;
         }
         
-        .nav-logo img {
-            height: 50px;
-            transition: all 0.4s ease;
+        /* ===== TRANSPARENT TEXT LOGO ===== */
+        .nav-logo {
+            display: flex;
+            align-items: center;
         }
         
-        .navbar.scrolled .nav-logo img {
-            height: 40px;
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--spice);
+            position: relative;
         }
         
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: 3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .logo-tagline {
+            font-size: 0.8rem;
+            color: var(--dark);
+            font-weight: 500;
+            margin-left: 10px;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+        
+        /* ===== NAVIGATION LINKS ===== */
         .nav-links { 
             display: flex;
             gap: 25px;
@@ -98,7 +123,7 @@
             width: 100%;
         }
         
-        /* ===== HERO SECTION WITH FIXED IMAGE ===== */
+        /* ===== HERO SECTION ===== */
         .hero {
             height: 85vh;
             background: 
@@ -457,7 +482,7 @@
             font-size: 0.9rem;
         }
         
-        /* ===== ANIMATIONS & MOBILE STYLES ===== */
+        /* ===== ANIMATIONS ===== */
         @keyframes pulse { 
             0% { opacity: 0.5; } 
             50% { opacity: 1; } 
@@ -469,6 +494,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             body {
                 padding-top: 70px;
@@ -476,6 +502,22 @@
             
             .navbar {
                 padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .navbar.scrolled {
+                padding: 10px 20px;
+            }
+            
+            .nav-logo {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: center;
             }
             
             .hero {
@@ -496,16 +538,12 @@
                 font-size: 1.2rem; 
             }
             
-            .nav-logo img {
-                height: 40px;
+            .logo-text {
+                font-size: 1.8rem;
             }
             
-            .nav-links { 
-                gap: 15px;
-            }
-            
-            .nav-links a { 
-                font-size: 0.95rem; 
+            .logo-tagline {
+                font-size: 0.7rem;
             }
             
             .fusion-section, #story, #order { 
@@ -536,10 +574,11 @@
     </style>
 </head>
 <body>
-    <!-- FIXED NAVIGATION BAR -->
+    <!-- FIXED NAVIGATION BAR WITH TEXT LOGO -->
     <header class="navbar">
         <div class="nav-logo">
-            <img src="https://i.ibb.co/1t0yHzWY/logo.jpg" alt="Chai Casa">
+            <div class="logo-text">Chai Casa</div>
+            <div class="logo-tagline">ONE CUP TWO CULTURES</div>
         </div>
         <div class="nav-links">
             <a href="#menu" class="active">MENU</a>
