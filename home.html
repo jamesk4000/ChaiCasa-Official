@@ -126,6 +126,35 @@
         
         /* ===== HERO SECTION WITH NEW IMAGE ===== */
         /* ===== HERO SECTION WITH NEW IMAGE ===== */
+/* ===== LOGO STYLES ===== */
+.logo-image {
+    height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .logo-image {
+    height: 50px;
+}
+
+.hero-logo {
+    max-width: 400px;
+    width: 90%;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.7));
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Remove old text logo styles */
+.logo-text,
+.logo-tagline,
+.hero h1,
+.hero .tagline {
+    display: none;
+}
+
+/* ===== HERO SECTION WITH NEW IMAGE ===== */
 .hero {
     height: 85vh;
     background: 
@@ -166,6 +195,7 @@
     </div>
     <div class="scroll-prompt">▼ Discover Our Chai Creations ▼</div>
 </section>
+
         
         .hero p {
             color: var(--cream);
@@ -574,29 +604,26 @@
     </style>
 </head>
 <body>
-    <!-- FIXED NAVIGATION BAR WITH TEXT LOGO -->
-    <header class="navbar">
-        <div class="nav-logo">
-            <div class="logo-text">Chai Casa</div>
-            <div class="logo-tagline">ONE CUP TWO CULTURES</div>
-        </div>
-        <div class="nav-links">
-            <a href="#menu" class="active">MENU</a>
-            <a href="#story">STORY</a>
-            <a href="#order">ORDER</a>
-        </div>
-    </header>
+    <!-- NAVIGATION BAR WITH LOGO -->
+<header class="navbar">
+    <div class="nav-logo">
+        <img src="Untitled_design-removebg-preview.png" alt="Chai Casa Logo" class="logo-image">
+    </div>
+    <div class="nav-links">
+        <a href="#menu" class="active">MENU</a>
+        <a href="#story">STORY</a>
+        <a href="#order">ORDER</a>
+    </div>
+</header>
 
-    <!-- HERO SECTION WITH NEW CHAI IMAGE -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Chai Casa</h1>
-            <div class="tagline">One Cup Two Cultures</div>
-           
-            <a href="#menu" class="hero-cta">Explore Our Menu</a>
-        </div>
-        <div class="scroll-prompt">▼ Discover Our Chai Creations ▼</div>
-    </section>
+<!-- HERO SECTION WITH LOGO -->
+<section class="hero">
+    <div class="hero-content">
+        <img src="Untitled_design-removebg-preview.png" alt="Chai Casa" class="hero-logo">
+        <a href="#menu" class="hero-cta">Explore Our Menu</a>
+    </div>
+    <div class="scroll-prompt">▼ Discover Our Chai Creations ▼</div>
+</section>
     
     <!-- MENU SECTION -->
     <section class="fusion-section" id="menu">
