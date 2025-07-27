@@ -72,12 +72,7 @@
         }
         
         .hero-logo {
-            max-width: 350px;
-            width: 80%;
-            height: auto;
-            margin-bottom: 2rem;
-            filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.6));
-            animation: fadeInUp 1.2s ease-out;
+            display: none; /* Hide logo in hero section */
         }
         
         /* ===== NAVIGATION LINKS ===== */
@@ -121,8 +116,11 @@
         .hero {
             height: 85vh;
             background: 
-                linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('kettle-milkyway.jpg') center/cover;
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('kettle-milkyway.jpg') center/contain;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: #1a1a2e;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -138,6 +136,7 @@
             max-width: 800px;
             padding: 0 20px;
             animation: fadeInUp 1s ease-out;
+            margin-top: 150px; /* Push content down from center */
         }
         
         .hero-cta {
@@ -565,10 +564,9 @@
         </div>
     </header>
 
-    <!-- HERO SECTION WITH LOGO -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
-            <img src="Untitled_design-removebg-preview.png" alt="Chai Casa" class="hero-logo">
             <a href="#menu" class="hero-cta">Explore Our Menu</a>
         </div>
         <div class="scroll-prompt">▼ Discover Our Chai Creations ▼</div>
