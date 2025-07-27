@@ -146,31 +146,25 @@
         }
         
         /* ===== ENHANCED HERO SECTION ===== */
-        .hero {
-            height: 100vh;
-            background: #0f0f23;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            border-bottom: 5px solid var(--gold-accent);
-            overflow: hidden;
-        }
-        
-        .hero-bg-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: auto;
-            height: 80%;
-            max-width: 90%;
-            object-fit: contain;
-            z-index: 1;
-            opacity: 0.9;
-        }
+        <!-- THREE HERO IMAGES SECTION -->
+<section class="hero-container">
+    <!-- Left Talavera Pattern Image -->
+    <div class="hero-left"></div>
+    
+    <!-- Right Talavera Pattern Image -->
+    <div class="hero-right"></div>
+    
+    <!-- Center Kettle Image Area -->
+    <div class="hero-center">
+        <img src="kettle-milkyway.jpg" alt="Chai Casa Hero" class="hero-bg-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Chai Casa</h1>
+            <p class="hero-subtitle">One Cup, Two Cultures</p>
+        </div>
+        <div class="scroll-prompt">▼ Discover Our Chai Creations ▼</div>
+    </div>
+</section>
         
         .hero-overlay {
             position: absolute;
