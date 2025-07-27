@@ -131,17 +131,43 @@
         /* ===== HERO SECTION ===== */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                       url('https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            background: #0f0f23;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
+            border-bottom: 5px solid var(--gold-accent);
+            overflow: hidden;
+        }
+        
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            z-index: 2;
         }
         
         .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 0 20px;
             animation: fadeInUp 1.2s ease-out;
         }
         
@@ -172,6 +198,8 @@
             font-size: 1.1rem;
             animation: bounce 2s infinite;
             font-weight: 600;
+            z-index: 3;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
         
         /* ===== VERTICAL SCROLLING MENU ===== */
@@ -593,7 +621,7 @@
     <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="nav-logo">
-            <img src="https://images.vexels.com/media/users/3/157234/isolated/preview/8a9f2d4b2dcd4d0d7f5c4a9f8d2c0d8d-chai-tea-cup-logo.png" alt="Chai Casa Logo">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/581/829/original/chai-tea-logo-template-vector.jpg" alt="Chai Casa Logo">
         </div>
         <div class="nav-links">
             <a href="#menu" class="active">MENU</a>
@@ -604,6 +632,8 @@
 
     <!-- HERO -->
     <section class="hero">
+        <img src="https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Chai Casa Hero" class="hero-bg-image">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Chai Casa</h1>
             <p class="hero-subtitle">One Cup, Two Cultures</p>
@@ -634,7 +664,7 @@
                     
                     <div class="menu-items-grid">
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Masala Chai</h4>
@@ -648,7 +678,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Saffron Chai</h4>
@@ -662,7 +692,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1576097449790-4ec0b69b04f7?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Cardamom Chai</h4>
@@ -673,7 +703,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1633002262583-43a2cdfc0d1c?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Kadak Chai</h4>
@@ -700,7 +730,7 @@
                     
                     <div class="menu-items-grid">
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1545665225-b23b99e4d45e?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Ceremonial Matcha Latte</h4>
@@ -711,7 +741,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1594631661960-6bebf7a7ebec?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">London Fog</h4>
@@ -722,7 +752,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Heritage Cappuccino</h4>
@@ -746,7 +776,7 @@
                     
                     <div class="menu-items-grid">
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1603360946504-7c1e0a1e3e1a?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Matcha-Pea Cooler</h4>
@@ -761,7 +791,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1561047029-3000c68339ca?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Chai Frappé</h4>
@@ -772,7 +802,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1598882946120-951fdbea58ff?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1546171753-97d7676e4602?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Blue Butterfly Lemonade</h4>
@@ -799,7 +829,7 @@
                     
                     <div class="menu-items-grid">
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1565299543923-37dd37887442?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Tamarind Ginger Sparkler</h4>
@@ -813,7 +843,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1571197919914-85f03a4e2e20?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Hibiscus-Chai Sangria</h4>
@@ -828,7 +858,7 @@
                         </div>
                         
                         <div class="menu-item-card">
-                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1576097449790-4ec0b69b04f7?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="item-image" style="background-image: url('https://images.unsplash.com/photo-1546171753-97d7676e4602?auto=format&fit=crop&w=600&q=80')"></div>
                             <div class="item-content">
                                 <div class="item-header">
                                     <h4 class="item-name">Golden Turmeric Latte</h4>
