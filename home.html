@@ -22,6 +22,8 @@
             --light-brown: #8D6E63;
             --talavera-blue: #1E3A8A;
             --talavera-light: #3B82F6;
+            --spice-orange: #E2725B;
+            --saffron-yellow: #F4C430;
         }
         
         body { 
@@ -316,6 +318,14 @@
             display: flex;
             align-items: flex-start;
             gap: 15px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+        
+        .menu-item.animate {
+            opacity: 1;
+            transform: translateX(0);
         }
         
         .drink-image {
@@ -555,6 +565,11 @@
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
         
         /* ===== RESPONSIVE DESIGN ===== */
@@ -983,6 +998,14 @@
                 if (colPosition < screenPosition) {
                     setTimeout(() => {
                         col.classList.add('animate');
+                        
+                        // Animate menu items within the column
+                        const menuItems = col.querySelectorAll('.menu-item');
+                        menuItems.forEach((item, itemIndex) => {
+                            setTimeout(() => {
+                                item.classList.add('animate');
+                            }, itemIndex * 150);
+                        });
                     }, index * 150);
                 }
             });
@@ -1019,6 +1042,14 @@
             menuCols.forEach((col, index) => {
                 setTimeout(() => {
                     col.classList.add('animate');
+                    
+                    // Animate menu items within the column
+                    const menuItems = col.querySelectorAll('.menu-item');
+                    menuItems.forEach((item, itemIndex) => {
+                        setTimeout(() => {
+                            item.classList.add('animate');
+                        }, itemIndex * 150);
+                    });
                 }, index * 150);
             });
         });
