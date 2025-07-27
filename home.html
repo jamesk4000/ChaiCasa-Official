@@ -33,75 +33,36 @@
             position: relative;
         }
         
-        /* ===== TALAVERA SIDE PATTERNS ===== */
+       /* SIMPLE TALAVERA SIDE PATTERNS */
 .talavera-pattern {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 150px;
-    z-index: 5;
-    opacity: 0.8;
-    pointer-events: none;
+    position: fixed !important;
+    top: 0 !important;
+    height: 100vh !important;
+    width: 100px !important;
+    z-index: 999 !important;
+    background-color: white !important;
+    border: 3px solid blue !important;
 }
 
 .talavera-left {
-    left: 0;
-    background: 
-        white,
-        radial-gradient(circle at 30px 30px, #1E3A8A 6px, transparent 6px),
-        radial-gradient(circle at 90px 90px, #3B82F6 5px, transparent 5px),
-        radial-gradient(circle at 60px 120px, #1E3A8A 4px, transparent 4px),
-        radial-gradient(circle at 120px 60px, #3B82F6 4px, transparent 4px),
-        radial-gradient(circle at 45px 180px, #1E3A8A 3px, transparent 3px),
-        radial-gradient(circle at 105px 200px, #3B82F6 3px, transparent 3px),
-        linear-gradient(45deg, rgba(30, 58, 138, 0.2) 25%, transparent 25%, transparent 50%, rgba(30, 58, 138, 0.2) 50%, rgba(30, 58, 138, 0.2) 75%, transparent 75%);
-    background-size: 150px 100vh, 60px 60px, 120px 120px, 80px 80px, 100px 100px, 70px 70px, 90px 90px, 40px 40px;
-    border-right: 5px solid #1E3A8A;
-    box-shadow: 
-        inset -10px 0 20px rgba(30, 58, 138, 0.1),
-        5px 0 15px rgba(30, 58, 138, 0.2);
+    left: 0 !important;
+    background: white !important;
+    border-right: 5px solid #1E3A8A !important;
+    background-image: 
+        radial-gradient(circle at 25px 25px, #1E3A8A 3px, transparent 3px),
+        radial-gradient(circle at 75px 75px, #3B82F6 3px, transparent 3px) !important;
+    background-size: 50px 50px !important;
 }
 
 .talavera-right {
-    right: 0;
-    background: 
-        white,
-        radial-gradient(circle at 120px 30px, #3B82F6 6px, transparent 6px),
-        radial-gradient(circle at 60px 90px, #1E3A8A 5px, transparent 5px),
-        radial-gradient(circle at 90px 120px, #3B82F6 4px, transparent 4px),
-        radial-gradient(circle at 30px 60px, #1E3A8A 4px, transparent 4px),
-        radial-gradient(circle at 105px 180px, #3B82F6 3px, transparent 3px),
-        radial-gradient(circle at 45px 200px, #1E3A8A 3px, transparent 3px),
-        linear-gradient(-45deg, rgba(59, 130, 246, 0.2) 25%, transparent 25%, transparent 50%, rgba(59, 130, 246, 0.2) 50%, rgba(59, 130, 246, 0.2) 75%, transparent 75%);
-    background-size: 150px 100vh, 60px 60px, 120px 120px, 80px 80px, 100px 100px, 70px 70px, 90px 90px, 40px 40px;
-    border-left: 5px solid #3B82F6;
-    box-shadow: 
-        inset 10px 0 20px rgba(59, 130, 246, 0.1),
-        -5px 0 15px rgba(59, 130, 246, 0.2);
+    right: 0 !important;
+    background: white !important;
+    border-left: 5px solid #3B82F6 !important;
+    background-image: 
+        radial-gradient(circle at 25px 25px, #3B82F6 3px, transparent 3px),
+        radial-gradient(circle at 75px 75px, #1E3A8A 3px, transparent 3px) !important;
+    background-size: 50px 50px !important;
 }
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .talavera-pattern {
-        width: 80px;
-        opacity: 0.6;
-    }
-    
-    .talavera-left {
-        background-size: 80px 100vh, 40px 40px, 80px 80px, 50px 50px, 65px 65px, 45px 45px, 60px 60px, 25px 25px;
-        border-right-width: 3px;
-    }
-    
-    .talavera-right {
-        background-size: 80px 100vh, 40px 40px, 80px 80px, 50px 50px, 65px 65px, 45px 45px, 60px 60px, 25px 25px;
-        border-left-width: 3px;
-    }
-}
-
-@media (max-width: 480px) {
-    .talavera-pattern {
-        width: 60px;
-        opacity: 0.5;
     }
 }
         
