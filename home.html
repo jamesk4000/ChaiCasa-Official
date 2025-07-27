@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Casa | Mexican-Indian Fusion Café</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background: #faf3e0; color: #5D4037; line-height: 1.6; }
+        
+        /* ===== NAVIGATION ===== */
+        nav { position: fixed; top: 20px; left: 20px; z-index: 1000; }
+        .nav-links { position: fixed; top: 35px; right: 30px; z-index: 1000; font-family: 'Poppins'; }
+        .nav-links a { color: white; margin: 0 15px; text-decoration: none; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); transition: all 0.3s ease; }
+        .nav-links a:hover { color: #D4AF37; }
+        
+        /* ===== NEW HERO SECTION ===== */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .scroll-prompt {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            z-index: 2;
+        }
+        
+        /* ===== MENU SECTION ===== */
+        .fusion-section { padding: 100px 10%; text-align: center; }
+        #menu { scroll-margin-top: 80px; background: #fffaf0; }
+        .fusion-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; color: #B76E79; }
+        .menu-subtitle { text-align: center; font-style: italic; color: #777; margin-bottom: 40px; }
+        .menu-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .menu-col { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); text-align: left; }
+        .category-title { font-family: 'Playfair Display'; color: #B76E79; border-bottom: 2px dashed #D4AF37; padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }
+        .menu-item { margin-bottom: 25px; }
+        .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .item-header h4 { font-size: 1.1rem; color: #5D4037; margin: 0; font-weight: 600; }
+        .price { font-weight: 700; color: #C14533; font-size: 1.1rem; }
+        .menu-item p { font-size: 0.9rem; color: #777; margin: 0; line-height: 1.4; padding-right: 10px; }
+        .ingredient-hint { font-size: 0.8rem; color: #aaa; margin-top: 5px; font-style: italic; }
+        .best-seller { background: #D4AF37; color: #5D4037; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; display: inline-block; }
+        .new-item { background: #B76E79; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; display: inline-block; }
+        
+        /* ===== OTHER SECTIONS ===== */
+        #story { padding: 100px 10%; background: #f8f0d7; text-align: center; scroll-margin-top: 80px; }
+        .story-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+        #order { padding: 100px 10%; background: #e8d9c5; text-align: center; scroll-margin-top: 80px; }
+        .order-btn { margin-top: 30px; padding: 15px 40px; background: #D4AF37; color: #5D4037; border: none; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .order-btn:hover { background: #C19A3B; transform: scale(1.05); }
+        footer { padding: 60px 20px 30px; background: #2c1a0e; color: #b3a08d; text-align: center; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; }
+        .footer-col h3 { color: #D4AF37; margin-bottom: 20px; font-family: 'Playfair Display'; }
+        .footer-col p { margin-bottom: 10px; }
+        .copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid #5D4037; }
+        
+        /* ===== ANIMATIONS & MOBILE STYLES ===== */
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { left: 50%; transform: translateX(-50%); text-align: center; top: 15px; }
+            .nav-links { top: 85px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center; right: auto; }
+            .nav-links a { margin: 0 10px; font-size: 0.9rem; }
+            .fusion-section, #story, #order { padding: 60px 5%; }
+            .fusion-title { font-size: 2.2rem; }
+            .menu-cols { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <img src="https://i.ibb.co/1t0yHzWY/logo.jpg" alt="Chai Casa" width="150">
+    </nav>
+    <div class="nav-links">
+        <a href="#menu">MENU</a>
+        <a href="#story">STORY</a>
+        <a href="#order">ORDER</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chai Casa</h1>
+            <p>Where Mexican Warmth Meets Indian Spice</p>
+        </div>
+        <div class="scroll-prompt">▼ Discover Our Fusion Flavors ▼</div>
+    </section>
+    
+    <!-- MENU SECTION -->
+    <section class="fusion-section" id="menu">
+        <h2 class="fusion-title">Fusion Chai Experience</h2>
+        <p class="menu-subtitle">Authentic Fusion Flavors • Calgary's Chai Destination</p>
+        
+        <div class="menu-cols">
+            <!-- BAKERY COLUMN -->
+            <div class="menu-col">
+                <h3 class="category-title">🧁 Bakery</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Chai-Spiced Muffins</h4>
+                        <span class="price">$3.75</span>
+                    </div>
+                    <p>Moist cake infused with masala chai spices</p>
+                    <div class="ingredient-hint">Cardamom, cinnamon, ginger</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Dulce de Leche Tarts</h4>
+                        <span class="price">$4.50</span>
+                    </div>
+                    <p>Mexican caramel in buttery shortbread crust</p>
+                    <div class="ingredient-hint">Slow-cooked milk caramel</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Spiced Empanadas</h4>
+                        <span class="price">$4.25</span>
+                    </div>
+                    <p>Savory pastries with Mexican-Indian fillings</p>
+                    <div class="ingredient-hint">Spiced potato or chorizo</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Gulab Jamun Cheesecake Bites</h4>
+                        <span class="price">$4.75</span>
+                    </div>
+                    <p>Indian sweet meets creamy cheesecake</p>
+                    <div class="ingredient-hint">Rose-syrup soaked, cardamom</div>
+                </div>
+            </div>
+            
+            <!-- SNACKS COLUMN -->
+            <div class="menu-col">
+                <h3 class="category-title">🥨 Fusion Snacks</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Churros Duo <span class="new-item">New!</span></h4>
+                        <span class="price">$7.50</span>
+                    </div>
+                    <p>Crispy fried dough with dual dipping sauces</p>
+                    <div class="ingredient-hint">Mexican chocolate & masala chai caramel</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Samosa Trio</h4>
+                        <span class="price">$8.50</span>
+                    </div>
+                    <p>Crispy pastries with three filling options</p>
+                    <div class="ingredient-hint">Vegetable, chicken tikka, cheese-jalapeño</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Naan Quesadillas</h4>
+                        <span class="price">$9.25</span>
+                    </div>
+                    <p>Tandoori naan stuffed with Oaxaca cheese</p>
+                    <div class="ingredient-hint">Served with avocado-tamarind chutney</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Grilled Sandwiches</h4>
+                        <span class="price">$9.25</span>
+                    </div>
+                    <p>Choice of fillings on artisan bread</p>
+                    <div class="ingredient-hint">Paneer tikka or chipotle chicken</div>
+                </div>
+            </div>
+            
+            <!-- DRINKS COLUMN 1 -->
+            <div class="menu-col">
+                <h3 class="category-title">☕ Hot Chai Classics</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Masala Chai <span class="best-seller">Bestseller</span></h4>
+                        <span class="price">$4.25</span>
+                    </div>
+                    <p>Traditional ginger-cardamom blend</p>
+                    <div class="ingredient-hint">Black tea, milk, Indian spices</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Saffron Royal Chai</h4>
+                        <span class="price">$5.25</span>
+                    </div>
+                    <p>Luxurious saffron-infused chai</p>
+                    <div class="ingredient-hint">Premium saffron, cardamom, honey</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Kadak Strong Chai</h4>
+                        <span class="price">$4.50</span>
+                    </div>
+                    <p>Bold brew with condensed milk</p>
+                    <div class="ingredient-hint">Strong black tea, cardamom</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Pinole Hot Chocolate</h4>
+                        <span class="price">$5.50</span>
+                    </div>
+                    <p>Mexican corn-cinnamon chocolate</p>
+                    <div class="ingredient-hint">Traditional corn-based chocolate</div>
+                </div>
+            </div>
+            
+            <!-- DRINKS COLUMN 2 -->
+            <div class="menu-col">
+                <h3 class="category-title">❄️ Cold Drinks</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Matcha-Pea Cooler</h4>
+                        <span class="price">$6.00</span>
+                    </div>
+                    <p>Refreshing green tea fusion</p>
+                    <div class="ingredient-hint">Matcha, butterfly pea, coconut milk</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Chai Frappé</h4>
+                        <span class="price">$5.75</span>
+                    </div>
+                    <p>Iced masala chai with whipped cream</p>
+                    <div class="ingredient-hint">Blended with ice, milk</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Hibiscus-Chai Sangria</h4>
+                        <span class="price">$6.25</span>
+                    </div>
+                    <p>Fruity infusion with seasonal berries</p>
+                    <div class="ingredient-hint">Hibiscus tea, masala chai, fruits</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Horchata Cooler</h4>
+                        <span class="price">$5.25</span>
+                    </div>
+                    <p>Traditional Mexican rice-cinnamon drink</p>
+                    <div class="ingredient-hint">Rice milk, cinnamon, vanilla</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- STORY SECTION -->
+    <section id="story">
+        <h2 class="fusion-title">Our Fusion Journey</h2>
+        <div class="story-content">
+            <p>Chai Casa — One Cup, Two Cultures.
+              Chai Casa was born from a love for bold flavors and timeless traditions. Rooted in the vibrant streets of India and inspired by the rich culinary heritage of Mexico, our café brings together two worlds in one unforgettable fusion experience.
+From the hand-pounded spices of traditional Indian chai to the earthy warmth of Mexican cacao and street-style bites, every item on our menu is a meeting point of cultures — a harmony of heat, sweetness, and soul.
+We believe food is more than sustenance — it’s a story, a connection, a moment of home. At Chai Casa, every cup is brewed with purpose, every bite crafted with care.
+Whether you’re here for your daily chai or curious to try something new, welcome to a place where heritage meets innovation.
+              Chai Casa — One Cup, Two Cultures. All Heart.</p>
+            <p style="margin-top: 20px;">"One Cup, Two Cultures" isn't just our slogan - it's our promise to bring you an unforgettable fusion experience in the heart of Calgary.</p>
+        </div>
+    </section>
+    
+    <!-- ORDER SECTION -->
+    <section id="order">
+        <h2 class="fusion-title">Experience Fusion in a Cup</h2>
+        <p style="margin-bottom: 30px; max-width: 600px; margin: 0 auto 30px;">
+            Visit us today or order online for a taste of our Mexican-Indian chai fusion
+        </p>
+        <button class="order-btn">ORDER NOW</button>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Chai Casa</h3>
+                <p>Mexican-Indian Fusion Café</p>
+                <p>123 Spice Street NW</p>
+                <p>Calgary, AB T3K 0E3</p>
+                <p>Open Daily: 7am - 9pm</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Phone: (403) 555-CHAI</p>
+                <p>Email: hola@chaicasa.ca</p>
+                <p>Instagram: @chaicasa.yyc</p>
+            </div>
+            <div class="footer-col">
+                <h3>Fusion Experiences</h3>
+                <p>Chai Tasting Flights</p>
+                <p>Mexican-Indian Brunch</p>
+                <p>Spice Blending Workshops</p>
+                <p>Private Events</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Chai Casa | One Cup, Two Cultures | Prices in CAD</p>
+        </div>
+    </footer>
+    
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const navLinks = document.querySelectorAll('.nav-links a');
+            if (scrollY > 100) {
+                navLinks.forEach(link => {
+                    link.style.color = '#5D4037';
+                    link.style.textShadow = 'none';
+                });
+            } else {
+                navLinks.forEach(link => {
+                    link.style.color = 'white';
+                    link.style.textShadow = '1px 1px 2px rgba(0,0,0,0.7)';
+                });
+            }
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        document.querySelector('.order-btn').addEventListener('click', () => {
+            alert("Online ordering coming soon! Visit us at 123 Spice Street NW, Calgary");
+        });
+    </script>
+</body>
+</html>
