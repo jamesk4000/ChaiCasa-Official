@@ -3,90 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chai Casa | One Cup, Two Cultres.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Chai Casa | One Cup Two Cultures.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        :root {
-            --spice: #c14533;
-            --clay: #cd5c5c;
-            --gold: #d4af37;
-            --teal: #008080;
-            --cream: #fff8e1;
-            --dark: #3e2723;
-            --talavera-blue: #2c5c8a;
-            --talavera-yellow: #f0c420;
-            --talavera-orange: #e67c30;
-            --talavera-green: #2e8b57;
-        }
-        
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            overflow-x: hidden; 
-            background: #faf3e0; 
-            color: #5D4037; 
-            line-height: 1.6; 
-        }
-        
-        /* ===== TALAVERA BORDER ===== */
-        .talavera-border {
-            height: 15px;
-            background: repeating-linear-gradient(
-                45deg,
-                var(--talavera-blue),
-                var(--talavera-blue) 10px,
-                var(--talavera-yellow) 10px,
-                var(--talavera-yellow) 20px,
-                var(--talavera-orange) 20px,
-                var(--talavera-orange) 30px,
-                var(--talavera-green) 30px,
-                var(--talavera-green) 40px
-            );
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background: #faf3e0; color: #5D4037; line-height: 1.6; }
         
         /* ===== NAVIGATION ===== */
-        nav { 
-            position: fixed; 
-            top: 20px; 
-            left: 20px; 
-            z-index: 1000; 
-            background: rgba(255, 255, 255, 0.7);
-            padding: 10px;
-            border-radius: 10px;
-        }
+        nav { position: fixed; top: 20px; left: 20px; z-index: 1000; }
+        .nav-links { position: fixed; top: 35px; right: 30px; z-index: 1000; font-family: 'Poppins'; }
+        .nav-links a { color: white; margin: 0 15px; text-decoration: none; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); transition: all 0.3s ease; }
+        .nav-links a:hover { color: #D4AF37; }
         
-        .nav-links { 
-            position: fixed; 
-            top: 35px; 
-            right: 30px; 
-            z-index: 1000; 
-            font-family: 'Poppins'; 
-        }
-        
-        .nav-links a { 
-            color: white; 
-            margin: 0 15px; 
-            text-decoration: none; 
-            font-weight: 600; 
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7); 
-            transition: all 0.3s ease; 
-        }
-        
-        .nav-links a:hover { 
-            color: var(--gold); 
-        }
-        
-        /* ===== FIXED HERO SECTION ===== */
+        /* ===== UPDATED HERO IMAGE ONLY ===== */
         .hero {
             height: 100vh;
             background: 
-                linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                 url('https://images.unsplash.com/photo-aEpWoDEBBzY?auto=format&fit=crop&w=1200&h=800&q=80') center/cover;
             display: flex;
             flex-direction: column;
@@ -95,54 +28,34 @@
             text-align: center;
             position: relative;
         }
-        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 800px;
             padding: 0 20px;
         }
-        
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
             color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
         .hero p {
-            color: var(--cream);
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-            font-weight: 300;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-        
-        .hero-cta {
-            display: inline-block;
-            background: var(--spice);
             color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        
-        .hero-cta:hover {
-            background: var(--clay);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
         .scroll-prompt {
             position: absolute;
             bottom: 30px;
@@ -156,255 +69,50 @@
         }
         
         /* ===== MENU SECTION ===== */
-        .fusion-section { 
-            padding: 100px 10%; 
-            text-align: center; 
-            position: relative;
-            overflow: hidden;
-        }
-        
-        #menu { 
-            scroll-margin-top: 80px; 
-            background: #fffaf0; 
-        }
-        
-        .section-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 Q40,5 50,20 T80,20" stroke="%23c1453310" fill="none" stroke-width="2"/><path d="M10,40 Q30,25 40,40 T70,40" stroke="%23d4af3720" fill="none" stroke-width="2"/><path d="M30,60 Q50,45 60,60 T90,60" stroke="%2300808020" fill="none" stroke-width="2"/></svg>');
-            opacity: 0.3;
-            z-index: 0;
-        }
-        
-        .fusion-title { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 3.5rem; 
-            margin-bottom: 15px; 
-            color: var(--spice);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .menu-subtitle { 
-            text-align: center; 
-            font-style: italic; 
-            color: var(--dark); 
-            margin-bottom: 40px; 
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto 50px;
-        }
-        
-        .menu-cols { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
-            margin-top: 40px; 
-            position: relative;
-            z-index: 1;
-        }
-        
-        .menu-col { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08); 
-            text-align: left; 
-            border-top: 5px solid var(--spice);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .menu-col:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .category-title { 
-            font-family: 'Playfair Display'; 
-            color: var(--spice); 
-            border-bottom: 2px dashed var(--gold); 
-            padding-bottom: 10px; 
-            margin-bottom: 25px; 
-            font-size: 1.8rem; 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .menu-item { 
-            margin-bottom: 25px; 
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #eee;
-        }
-        
-        .menu-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .item-header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            margin-bottom: 8px; 
-        }
-        
-        .item-header h4 { 
-            font-size: 1.2rem; 
-            color: var(--dark); 
-            margin: 0; 
-            font-weight: 600; 
-        }
-        
-        .price { 
-            font-weight: 700; 
-            color: var(--spice); 
-            font-size: 1.2rem; 
-        }
-        
-        .menu-item p { 
-            font-size: 0.95rem; 
-            color: #777; 
-            margin: 0; 
-            line-height: 1.5; 
-            padding-right: 10px; 
-        }
-        
-        .ingredient-hint { 
-            font-size: 0.8rem; 
-            color: #aaa; 
-            margin-top: 5px; 
-            font-style: italic; 
-        }
-        
-        .best-seller { 
-            background: var(--spice); 
-            color: white; 
-            font-size: 0.75rem; 
-            padding: 3px 10px; 
-            border-radius: 15px; 
-            margin-left: 8px; 
-            display: inline-block;
-            font-weight: 500;
-        }
-        
-        .new-item { 
-            background: var(--teal); 
-            color: white; 
-            font-size: 0.75rem; 
-            padding: 3px 10px; 
-            border-radius: 15px; 
-            margin-left: 8px; 
-            display: inline-block;
-            font-weight: 500;
-        }
+        .fusion-section { padding: 100px 10%; text-align: center; }
+        #menu { scroll-margin-top: 80px; background: #fffaf0; }
+        .fusion-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; color: #B76E79; }
+        .menu-subtitle { text-align: center; font-style: italic; color: #777; margin-bottom: 40px; }
+        .menu-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .menu-col { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); text-align: left; }
+        .category-title { font-family: 'Playfair Display'; color: #B76E79; border-bottom: 2px dashed #D4AF37; padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }
+        .menu-item { margin-bottom: 25px; }
+        .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .item-header h4 { font-size: 1.1rem; color: #5D4037; margin: 0; font-weight: 600; }
+        .price { font-weight: 700; color: #C14533; font-size: 1.1rem; }
+        .menu-item p { font-size: 0.9rem; color: #777; margin: 0; line-height: 1.4; padding-right: 10px; }
+        .ingredient-hint { font-size: 0.8rem; color: #aaa; margin-top: 5px; font-style: italic; }
+        .best-seller { background: #D4AF37; color: #5D4037; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; display: inline-block; }
+        .new-item { background: #B76E79; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; display: inline-block; }
         
         /* ===== OTHER SECTIONS ===== */
         #story { 
             padding: 100px 10%; 
-            background: linear-gradient(rgba(248, 240, 215, 0.9), rgba(248, 240, 215, 0.9)), 
-                       url('https://images.unsplash.com/photo-1564890369478-c89ca6fa9e46?auto=format&fit=crop&w=1200&h=600&q=80') center/cover; 
+            background: #f8f0d7; 
             text-align: center; 
             scroll-margin-top: 80px; 
-            position: relative;
         }
-        
-        .story-content { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            font-size: 1.1rem; 
-            background: rgba(255, 255, 255, 0.85);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .story-content p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .story-content p:last-child {
-            margin-bottom: 0;
-            font-style: italic;
-            font-weight: 500;
-            color: var(--spice);
-            margin-top: 25px;
-            font-size: 1.2rem;
-        }
-        
+        .story-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
         #order { 
-            padding: 120px 10%; 
-            background: linear-gradient(135deg, var(--spice) 0%, var(--clay) 100%); 
+            padding: 100px 10%; 
+            background: #e8d9c5; 
             text-align: center; 
             scroll-margin-top: 80px; 
-            color: white;
-            position: relative;
-            overflow: hidden;
         }
-        
-        .talavera-border-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 15px;
-            background: repeating-linear-gradient(
-                45deg,
-                var(--talavera-blue),
-                var(--talavera-blue) 10px,
-                var(--talavera-yellow) 10px,
-                var(--talavera-yellow) 20px,
-                var(--talavera-orange) 20px,
-                var(--talavera-orange) 30px,
-                var(--talavera-green) 30px,
-                var(--talavera-green) 40px
-            );
-        }
-        
-        .order-content {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
         .order-btn { 
             margin-top: 30px; 
-            padding: 17px 50px; 
-            background: var(--gold); 
-            color: var(--dark); 
+            padding: 15px 40px; 
+            background: #D4AF37; 
+            color: #5D4037; 
             border: none; 
             border-radius: 30px; 
-            font-size: 1.2rem; 
-            font-weight: 700; 
+            font-size: 1.1rem; 
+            font-weight: 600; 
             cursor: pointer; 
             transition: all 0.3s ease; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        
-        .order-btn:hover { 
-            background: #e6c050; 
-            transform: scale(1.05); 
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        footer { 
-            padding: 80px 20px 40px; 
-            background: #2c1a0e; 
-            color: #b3a08d; 
-            text-align: center; 
-            position: relative;
-        }
-        
+        .order-btn:hover { background: #C19A3B; transform: scale(1.05); }
+        footer { padding: 60px 20px 30px; background: #2c1a0e; color: #b3a08d; text-align: center; }
         .footer-content { 
             max-width: 1200px; 
             margin: 0 auto; 
@@ -413,98 +121,25 @@
             gap: 40px; 
             text-align: left; 
         }
-        
-        .footer-col h3 { 
-            color: var(--gold); 
-            margin-bottom: 20px; 
-            font-family: 'Playfair Display'; 
-            font-size: 1.5rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 10px;
-        }
-        
-        .footer-col p { 
-            margin-bottom: 10px; 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold);
-            border-radius: 50%;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--gold);
-            color: #2c1a0e;
-            transform: translateY(-3px);
-        }
-        
-        .copyright { 
-            margin-top: 60px; 
-            padding-top: 20px; 
-            border-top: 1px solid #5D4037; 
-            font-size: 0.9rem;
-        }
-        
-        .chai-icon {
-            font-size: 1.5rem;
-            color: var(--spice);
-            margin: 0 5px;
-        }
+        .footer-col h3 { color: #D4AF37; margin-bottom: 20px; font-family: 'Playfair Display'; }
+        .footer-col p { margin-bottom: 10px; }
+        .copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid #5D4037; }
         
         /* ===== ANIMATIONS & MOBILE STYLES ===== */
-        @keyframes pulse { 
-            0% { opacity: 0.5; } 
-            50% { opacity: 1; } 
-            100% { opacity: 0.5; } 
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-on-scroll {
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-        }
-        
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { font-size: 1.4rem; }
+            .hero h1 { font-size: 2.5rem; }
             nav { left: 50%; transform: translateX(-50%); text-align: center; top: 15px; }
             .nav-links { top: 85px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center; right: auto; }
             .nav-links a { margin: 0 10px; font-size: 0.9rem; }
             .fusion-section, #story, #order { padding: 60px 5%; }
-            .fusion-title { font-size: 2.5rem; }
+            .fusion-title { font-size: 2.2rem; }
             .menu-cols { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; text-align: center; }
-            .footer-col h3 { text-align: center; }
-            .social-links { justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <!-- TALAVERA TOP BORDER -->
-    <div class="talavera-border"></div>
-    
-    <!-- NAVIGATION -->
+    <!-- NAVIGATION WITH TRANSPARENT LOGO -->
     <nav>
         <img src="https://i.ibb.co/1t0yHzWY/logo.jpg" alt="Chai Casa" width="150" style="background: transparent">
     </nav>
@@ -514,196 +149,275 @@
         <a href="#order">ORDER</a>
     </div>
 
-    <!-- CHAI-FOCUSED HERO WITH CORRECT IMAGE -->
+    <!-- HERO SECTION WITH UPDATED IMAGE ONLY -->
     <section class="hero">
         <div class="hero-content">
             <h1>Chai Casa</h1>
-            <p>Authentic Indian Chai ∙ Talavera Elegance ∙ Calgary's Chai Destination</p>
-            <a href="#menu" class="hero-cta">Explore Our Chai Menu</a>
+            <p>Where Tradition Meets Innovation in Every Cup</p>
         </div>
         <div class="scroll-prompt">▼ Discover Our Chai Creations ▼</div>
     </section>
     
-    <!-- CHAI MENU SECTION -->
+    <!-- ORIGINAL MENU SECTION - UNCHANGED -->
     <section class="fusion-section" id="menu">
-        <div class="section-pattern"></div>
-        <h2 class="fusion-title animate-on-scroll">Our Chai Experience</h2>
-        <p class="menu-subtitle animate-on-scroll">Handcrafted with premium Assam tea, fresh spices, and served in traditional Talavera pottery</p>
+        <h2 class="fusion-title">Our Chai Experience</h2>
+        <p class="menu-subtitle">Authentic Recipes • Calgary's Chai Destination</p>
         
         <div class="menu-cols">
             <!-- HOT CHAI -->
-            <div class="menu-col animate-on-scroll">
-                <h3 class="category-title"><i class="fas fa-mug-hot"></i> Hot Chai</h3>
+            <div class="menu-col">
+                <h3 class="category-title">☕ Hot Chai</h3>
                 <div class="menu-item">
                     <div class="item-header">
                         <h4>Masala Chai <span class="best-seller">Bestseller</span></h4>
                         <span class="price">$4.25</span>
                     </div>
-                    <p>Traditional blend with fresh ginger, cardamom, cloves & black pepper</p>
+                    <p>Traditional blend with ginger and spices</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Kashmiri Kahwa</h4>
+                        <h4>Saffron Chai</h4>
                         <span class="price">$5.25</span>
                     </div>
-                    <p>Green tea with saffron, almonds, cinnamon & rose petals</p>
+                    <p>Premium saffron-infused chai</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Adrak Chai <span class="new-item">New!</span></h4>
-                        <span class="price">$4.50</span>
-                    </div>
-                    <p>Extra strong ginger infusion with jaggery</p>
-                </div>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <h4>Elaichi Chai</h4>
+                        <h4>Cardamom Chai</h4>
                         <span class="price">$4.25</span>
                     </div>
-                    <p>Cardamom-forward aromatic blend with fennel seeds</p>
+                    <p>Cardamom-forward aromatic blend</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Tulsi Chai</h4>
-                        <span class="price">$4.75</span>
+                        <h4>Kadak Chai</h4>
+                        <span class="price">$4.50</span>
                     </div>
-                    <p>Holy basil infused with traditional masala spices</p>
+                    <p>Strong brew with condensed milk</p>
                 </div>
-            </div>
-            
-            <!-- SPECIALTY CHAI -->
-            <div class="menu-col animate-on-scroll">
-                <h3 class="category-title"><i class="fas fa-star"></i> Specialty Chai</h3>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Talavera Chai Pot <span class="best-seller">Bestseller</span></h4>
-                        <span class="price">$8.50</span>
+                        <h4>Hot Blue Butterfly Tea</h4>
+                        <span class="price">$4.50</span>
                     </div>
-                    <p>Traditional masala chai served in hand-painted Talavera teapot for two</p>
+                    <p>Vibrant herbal tea with citrus notes</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Punjabi Malai Chai</h4>
-                        <span class="price">$5.75</span>
-                    </div>
-                    <p>Creamy tea with reduced milk & crushed pistachios</p>
-                </div>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <h4>Mumbai Cutting Chai</h4>
-                        <span class="price">$3.50</span>
-                    </div>
-                    <p>Strong, sweet half-cup street-style brew</p>
-                </div>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <h4>Kerala Sulaimani</h4>
-                        <span class="price">$4.75</span>
-                    </div>
-                    <p>Black tea with lemon, mint & spices</p>
-                </div>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <h4>Spiced Rose Latte</h4>
+                        <h4>Pinole Hot Chocolate</h4>
                         <span class="price">$5.50</span>
                     </div>
-                    <p>Earl Grey tea with rose syrup & steamed milk</p>
+                    <p>Traditional corn-cinnamon chocolate</p>
                 </div>
             </div>
             
-            <!-- COLD CHAI -->
-            <div class="menu-col animate-on-scroll">
-                <h3 class="category-title"><i class="fas fa-glass-whiskey"></i> Cold Chai</h3>
+            <!-- HOT LATTES -->
+            <div class="menu-col">
+                <h3 class="category-title">✨ Hot Lattes</h3>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Iced Masala Chai</h4>
+                        <h4>Matcha Latte</h4>
                         <span class="price">$5.25</span>
                     </div>
-                    <p>Traditional spices served over ice with milk foam</p>
+                    <p>Ceremonial matcha with steamed milk</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Mango Lassi Chai <span class="new-item">New!</span></h4>
-                        <span class="price">$6.25</span>
+                        <h4>London Fog</h4>
+                        <span class="price">$5.00</span>
                     </div>
-                    <p>Cold chai blended with mango & yogurt</p>
+                    <p>Earl Grey tea with vanilla syrup</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Chai Lemonade</h4>
+                        <h4>Cappuccino</h4>
+                        <span class="price">$4.50</span>
+                    </div>
+                    <p>Classic espresso with microfoam</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Blue Butterfly Latte</h4>
+                        <span class="price">$5.75</span>
+                    </div>
+                    <p>Color-changing tea latte</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Americano</h4>
+                        <span class="price">$3.75</span>
+                    </div>
+                    <p>Rich espresso with hot water</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Espresso</h4>
+                        <span class="price">$3.25</span>
+                    </div>
+                    <p>Single or double shot</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Vanilla Latte</h4>
+                        <span class="price">$5.00</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Mocha Latte</h4>
                         <span class="price">$5.50</span>
                     </div>
-                    <p>Spiced tea with fresh lemon & mint</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Caramel Latte</h4>
+                        <span class="price">$5.25</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COLD DRINKS -->
+            <div class="menu-col">
+                <h3 class="category-title">❄️ Cold Drinks</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Matcha-Pea Cooler</h4>
+                        <span class="price">$6.00</span>
+                    </div>
+                    <p>Refreshing green tea fusion</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
                         <h4>Chai Frappé</h4>
-                        <span class="price">$6.00</span>
+                        <span class="price">$5.75</span>
                     </div>
-                    <p>Blended chai with ice & whipped cream</p>
-                </div>
-                
-                <h3 class="category-title" style="margin-top: 30px;"><i class="fas fa-cookie"></i> Chai Accompaniments</h3>
-                <div class="menu-item">
-                    <div class="item-header">
-                        <h4>Masala Mathri</h4>
-                        <span class="price">$4.50</span>
-                    </div>
-                    <p>Spiced savory crackers</p>
+                    <p>Iced chai with whipped cream</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Nankhatai</h4>
-                        <span class="price">$3.75</span>
+                        <h4>Blue Butterfly Lemonade</h4>
+                        <span class="price">$5.50</span>
                     </div>
-                    <p>Traditional Indian shortbread cookies</p>
+                    <p>Lavender-infused color-changing drink</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Pistachio Baklava</h4>
+                        <h4>Iced Latte</h4>
                         <span class="price">$5.25</span>
                     </div>
-                    <p>Layered pastry with pistachios & honey</p>
+                    <p>Choice of flavor over ice</p>
+                </div>
+                
+                <h3 class="category-title" style="margin-top: 30px;">🌟 Signature Creations</h3>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Tamarind Ginger Sparkler</h4>
+                        <span class="price">$5.25</span>
+                    </div>
+                    <p>Tangy tamarind with ginger fizz</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Hibiscus-Chai Sangria</h4>
+                        <span class="price">$6.25</span>
+                    </div>
+                    <p>Fruity infusion with seasonal berries</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Coconut Turmeric Latte</h4>
+                        <span class="price">$5.50</span>
+                    </div>
+                    <p>Golden milk with coconut cream</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Horchata Cooler</h4>
+                        <span class="price">$5.25</span>
+                    </div>
+                    <p>Traditional rice-cinnamon drink</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Mexican Chocolate Cold Brew</h4>
+                        <span class="price">$6.50</span>
+                    </div>
+                    <p>Cold brew with spiced chocolate</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Hot Taro Latte</h4>
+                        <span class="price">$5.75</span>
+                    </div>
+                    <p>Creamy purple root vegetable latte</p>
                 </div>
             </div>
             
-            <!-- CHAI DESSERTS -->
-            <div class="menu-col animate-on-scroll">
-                <h3 class="category-title"><i class="fas fa-ice-cream"></i> Chai Desserts</h3>
+            <!-- SNACKS & BAKERY -->
+            <div class="menu-col">
+                <h3 class="category-title">🥨 Snacks & Bakery</h3>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Chai Tiramisu</h4>
+                        <h4>Churros Duo <span class="new-item">New!</span></h4>
                         <span class="price">$7.50</span>
                     </div>
-                    <p>Classic tiramisu infused with masala chai</p>
+                    <p>Crispy dough with dual dipping sauces</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Gulab Jamun</h4>
-                        <span class="price">$6.50</span>
+                        <h4>Samosa Trio</h4>
+                        <span class="price">$8.50</span>
                     </div>
-                    <p>Fried milk dumplings in rose syrup</p>
+                    <p>Crispy pastries with three fillings</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Chai Panna Cotta</h4>
-                        <span class="price">$7.25</span>
+                        <h4>Grilled Sandwiches</h4>
+                        <span class="price">$9.25</span>
                     </div>
-                    <p>Cardamom-infused cream with saffron syrup</p>
+                    <p>Choice of fillings on artisan bread</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Masala Chai Cake</h4>
-                        <span class="price">$6.75</span>
+                        <h4>Bagel Specials</h4>
+                        <span class="price">$8.75</span>
                     </div>
-                    <p>Spiced tea cake with cream cheese frosting</p>
+                    <p>Daily fresh-baked bagels</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h4>Kulfi Affogato <span class="best-seller">Bestseller</span></h4>
-                        <span class="price">$8.25</span>
+                        <h4>Naan Quesadillas</h4>
+                        <span class="price">$9.25</span>
                     </div>
-                    <p>Traditional Indian ice cream with hot chai poured over</p>
+                    <p>Stuffed naan with melted cheese</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Tortas</h4>
+                        <span class="price">$10.50</span>
+                    </div>
+                    <p>Authentic sandwiches</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Chai-Spiced Muffins</h4>
+                        <span class="price">$3.75</span>
+                    </div>
+                    <p>Daily rotating flavors</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Tarts</h4>
+                        <span class="price">$4.50</span>
+                    </div>
+                    <p>Sweet pastries with seasonal fillings</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h4>Empanadas</h4>
+                        <span class="price">$4.25</span>
+                    </div>
+                    <p>Sweet & savory stuffed pastries</p>
                 </div>
             </div>
         </div>
@@ -711,30 +425,23 @@
     
     <!-- STORY SECTION -->
     <section id="story">
-        <h2 class="fusion-title animate-on-scroll">Our Chai Journey</h2>
-        <div class="story-content animate-on-scroll">
-            <p>Chai Casa was born from a love for the rich traditions of Indian chai and the vibrant artistry of Talavera pottery. Our founder, Priya Sharma, grew up in Mumbai watching her grandmother brew masala chai in handcrafted clay pots, a ritual that filled their home with warmth and connection.</p>
-            
-            <p>After moving to Calgary, Priya longed to recreate that sense of community and the authentic taste of home. She combined her passion for Indian tea culture with the beautiful Talavera ceramics she discovered during travels to Mexico, recognizing how both traditions celebrate craftsmanship, vibrant colors, and the joy of sharing.</p>
-            
-            <p>Every cup at Chai Casa is brewed using traditional techniques - boiling Assam tea leaves with fresh spices in milk to extract maximum flavor. We serve our chai in authentic Talavera pottery, each piece hand-painted by artisans in Puebla, Mexico, creating a unique fusion of cultures in every cup.</p>
-            
-            <p>From the hand-pounded spices of traditional Indian masala chai to the intricate patterns of our Talavera serveware, every detail at Chai Casa is crafted with intention and care. We believe chai is more than a beverage—it's a moment of connection, a pause in your day, a warm embrace.</p>
-            
-            <p>"One Cup, Two Cultures" - this is our promise to bring you an authentic chai experience that honors both Indian tradition and Mexican artistry in the heart of Calgary.</p>
+        <h2 class="fusion-title">Our Chai Journey</h2>
+        <div class="story-content">
+            <p>Chai Casa was born from a love for bold flavors and timeless traditions. Rooted in the vibrant streets of India and inspired by the rich culinary heritage of Mexico, our café brings together two worlds in one unforgettable fusion experience.
+From the hand-pounded spices of traditional Indian chai to the earthy warmth of Mexican cacao and street-style bites, every item on our menu is a meeting point of cultures — a harmony of heat, sweetness, and soul.
+We believe food is more than sustenance — it’s a story, a connection, a moment of home. At Chai Casa, every cup is brewed with purpose, every bite crafted with care.
+Whether you’re here for your daily chai or curious to try something new, welcome to a place where heritage meets innovation.</p>
+            <p style="margin-top: 20px;">"One Cup, Two Cultures" - this is our promise to bring you an unforgettable chai experience in the heart of Calgary.</p>
         </div>
     </section>
     
     <!-- ORDER SECTION -->
     <section id="order">
-        <div class="talavera-border-bottom"></div>
-        <div class="order-content">
-            <h2 class="fusion-title animate-on-scroll" style="color: white;">Experience Artisanal Chai</h2>
-            <p class="menu-subtitle animate-on-scroll" style="color: rgba(255,255,255,0.9); max-width: 600px;">
-                Visit our Calgary location to enjoy chai served in authentic Talavera pottery
-            </p>
-            <button class="order-btn animate-on-scroll">ORDER NOW</button>
-        </div>
+        <h2 class="fusion-title">Experience Artisanal Chai</h2>
+        <p style="margin-bottom: 30px; max-width: 600px; margin: 0 auto 30px;">
+            Visit us today for a taste of our carefully crafted chai creations
+        </p>
+        <button class="order-btn">ORDER NOW</button>
     </section>
     
     <!-- FOOTER -->
@@ -742,37 +449,31 @@
         <div class="footer-content">
             <div class="footer-col">
                 <h3>Chai Casa</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Spice Street NW, Calgary, AB T3K 0E3</p>
-                <p><i class="fas fa-clock"></i> Open Daily: 7am - 9pm</p>
-                <p><i class="fas fa-mug-hot"></i> Artisanal Chai Experience</p>
+                <p>Artisanal Chai Experience</p>
+                <p>123 Spice Street NW</p>
+                <p>Calgary, AB T3K 0E3</p>
+                <p>Open Daily: 7am - 9pm</p>
             </div>
             <div class="footer-col">
                 <h3>Contact</h3>
-                <p><i class="fas fa-phone"></i> (403) 555-CHAI</p>
-                <p><i class="fas fa-envelope"></i> hello@chaicasa.ca</p>
-                <p><i class="fas fa-hashtag"></i> #ChaiCasaYYC</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
+                <p>Phone: (403) 555-CHAI</p>
+                <p>Email: hello@chaicasa.ca</p>
+                <p>Instagram: @chaicasa.yyc</p>
             </div>
             <div class="footer-col">
                 <h3>Chai Experiences</h3>
-                <p><i class="fas fa-mortar-pestle"></i> Chai Blending Workshops</p>
-                <p><i class="fas fa-mug-hot"></i> Talavera Tea Ceremonies</p>
-                <p><i class="fas fa-calendar-alt"></i> Chai Tasting Events</p>
+                <p>Chai Tasting Flights</p>
+                <p>Brewing Workshops</p>
+                <p>Private Events</p>
             </div>
         </div>
         <div class="copyright">
-            <p>© 2024 Chai Casa | One Cup, Two Cultures | Prices in CAD</p>
+            <p>© 2024 Chai Casa | One Cup, Two Cultures. | Prices in CAD</p>
         </div>
     </footer>
     
     <script>
-        // Scroll animations
         window.addEventListener('scroll', () => {
-            // Navigation color change
             const scrollY = window.scrollY;
             const navLinks = document.querySelectorAll('.nav-links a');
             if (scrollY > 100) {
@@ -786,18 +487,8 @@
                     link.style.textShadow = '1px 1px 2px rgba(0,0,0,0.7)';
                 });
             }
-            
-            // Animate on scroll
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.85) {
-                    el.style.animationPlayState = 'running';
-                }
-            });
         });
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -805,13 +496,9 @@
             });
         });
         
-        // Order button action
         document.querySelector('.order-btn').addEventListener('click', () => {
             alert("Online ordering coming soon! Visit us at 123 Spice Street NW, Calgary");
         });
-        
-        // Initialize animations
-        window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
 </html>
