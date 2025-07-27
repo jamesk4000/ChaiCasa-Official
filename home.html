@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chai Casa | One Cup Two Cultures. </title>
+    <title>Chai Casa | One Cup Two Cultures.</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background: #faf3e0; color: #5D4037; line-height: 1.6; }
+        
+        /* ===== TALAVERA INSPIRED DESIGN ===== */
+        .talavera-border {
+            height: 15px;
+            background: repeating-linear-gradient(
+                45deg,
+                #2c5c8a,
+                #2c5c8a 10px,
+                #f0c420 10px,
+                #f0c420 20px,
+                #e67c30 20px,
+                #e67c30 30px,
+                #2e8b57 30px,
+                #2e8b57 40px
+            );
+        }
+        
+        .talavera-pattern {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(44, 92, 138, 0.08) 0px, transparent 8px),
+                radial-gradient(circle at 90% 80%, rgba(240, 196, 32, 0.08) 0px, transparent 8px),
+                radial-gradient(circle at 50% 30%, rgba(230, 124, 48, 0.08) 0px, transparent 10px),
+                radial-gradient(circle at 30% 70%, rgba(46, 139, 87, 0.08) 0px, transparent 10px);
+            background-size: 200px 200px;
+        }
+        
+        .chai-icon {
+            color: #c14533;
+            margin: 0 5px;
+        }
         
         /* ===== NAVIGATION ===== */
         nav { position: fixed; top: 20px; left: 20px; z-index: 1000; }
@@ -15,11 +46,12 @@
         .nav-links a { color: white; margin: 0 15px; text-decoration: none; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.7); transition: all 0.3s ease; }
         .nav-links a:hover { color: #D4AF37; }
         
-        /* ===== NEW CHAI-FOCUSED HERO ===== */
+        /* ===== ENHANCED HERO SECTION ===== */
         .hero {
             height: 100vh;
-            background: url('https://unsplash.com/photos/a-couple-of-glasses-of-coffee-sitting-on-top-of-a-table-aEpWoDEBBzY') center/cover;
-            
+            background: 
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('https://images.unsplash.com/photo-1597822738124-151fb72dcb79?auto=format&fit=crop&w=1200&h=800&q=80') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -44,16 +76,37 @@
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1rem;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            letter-spacing: 1px;
         }
         .hero p {
-            color: white;
-            font-size: 1.5rem;
+            color: #fff8e1;
+            font-size: 1.8rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            font-weight: 300;
+        }
+        .hero-cta {
+            display: inline-block;
+            background: #c14533;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 2px solid #D4AF37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .hero-cta:hover {
+            background: #cd5c5c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         .scroll-prompt {
             position: absolute;
@@ -70,10 +123,36 @@
         /* ===== MENU SECTION ===== */
         .fusion-section { padding: 100px 10%; text-align: center; }
         #menu { scroll-margin-top: 80px; background: #fffaf0; }
-        .fusion-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; color: #B76E79; }
+        .fusion-title { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            margin-bottom: 15px; 
+            color: #B76E79; 
+            position: relative;
+        }
+        .fusion-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #c14533;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
         .menu-subtitle { text-align: center; font-style: italic; color: #777; margin-bottom: 40px; }
         .menu-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .menu-col { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); text-align: left; }
+        .menu-col { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08); 
+            text-align: left;
+            border-top: 5px solid #c14533;
+            transition: transform 0.3s ease;
+        }
+        .menu-col:hover {
+            transform: translateY(-10px);
+        }
         .category-title { font-family: 'Playfair Display'; color: #B76E79; border-bottom: 2px dashed #D4AF37; padding-bottom: 10px; margin-bottom: 20px; font-size: 1.8rem; }
         .menu-item { margin-bottom: 25px; }
         .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
@@ -85,13 +164,62 @@
         .new-item { background: #B76E79; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; display: inline-block; }
         
         /* ===== OTHER SECTIONS ===== */
-        #story { padding: 100px 10%; background: #f8f0d7; text-align: center; scroll-margin-top: 80px; }
-        .story-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
-        #order { padding: 100px 10%; background: #e8d9c5; text-align: center; scroll-margin-top: 80px; }
-        .order-btn { margin-top: 30px; padding: 15px 40px; background: #D4AF37; color: #5D4037; border: none; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
-        .order-btn:hover { background: #C19A3B; transform: scale(1.05); }
-        footer { padding: 60px 20px 30px; background: #2c1a0e; color: #b3a08d; text-align: center; }
-        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; }
+        #story { 
+            padding: 100px 10%; 
+            background: 
+                linear-gradient(rgba(248, 240, 215, 0.9), rgba(248, 240, 215, 0.9)), 
+                url('https://images.unsplash.com/photo-1564890369478-c89ca6fa9e46?auto=format&fit=crop&w=1200&h=600&q=80') center/cover; 
+            text-align: center; 
+            scroll-margin-top: 80px; 
+        }
+        .story-content { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            font-size: 1.1rem; 
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+        }
+        #order { 
+            padding: 100px 10%; 
+            background: linear-gradient(135deg, #c14533 0%, #cd5c5c 100%); 
+            text-align: center; 
+            scroll-margin-top: 80px; 
+            color: white;
+        }
+        .order-btn { 
+            margin-top: 30px; 
+            padding: 17px 50px; 
+            background: #D4AF37; 
+            color: #5D4037; 
+            border: none; 
+            border-radius: 30px; 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .order-btn:hover { 
+            background: #e6c050; 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        footer { 
+            padding: 60px 20px 30px; 
+            background: #2c1a0e; 
+            color: #b3a08d; 
+            text-align: center; 
+        }
+        .footer-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 40px; 
+            text-align: left; 
+        }
         .footer-col h3 { color: #D4AF37; margin-bottom: 20px; font-family: 'Playfair Display'; }
         .footer-col p { margin-bottom: 10px; }
         .copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid #5D4037; }
@@ -100,6 +228,7 @@
         @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.4rem; }
             nav { left: 50%; transform: translateX(-50%); text-align: center; top: 15px; }
             .nav-links { top: 85px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center; right: auto; }
             .nav-links a { margin: 0 10px; font-size: 0.9rem; }
@@ -110,7 +239,10 @@
     </style>
 </head>
 <body>
-    <!-- NAVIGATION WITH TRANSPARENT LOGO -->
+    <!-- TALAVERA BORDER -->
+    <div class="talavera-border"></div>
+    
+    <!-- NAVIGATION -->
     <nav>
         <img src="https://i.ibb.co/1t0yHzWY/logo.jpg" alt="Chai Casa" width="150" style="background: transparent">
     </nav>
@@ -120,16 +252,17 @@
         <a href="#order">ORDER</a>
     </div>
 
-    <!-- CHAI-FOCUSED HERO -->
+    <!-- ENHANCED HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <h1>Chai Casa</h1>
             <p>Where Tradition Meets Innovation in Every Cup</p>
+            <a href="#menu" class="hero-cta">Explore Our Menu</a>
         </div>
         <div class="scroll-prompt">▼ Discover Our Chai Creations ▼</div>
     </section>
     
-    <!-- ORIGINAL MENU SECTION -->
+    <!-- MENU SECTION (UNCHANGED) -->
     <section class="fusion-section" id="menu">
         <h2 class="fusion-title">Our Chai Experience</h2>
         <p class="menu-subtitle">Authentic Recipes • Calgary's Chai Destination</p>
@@ -408,8 +541,8 @@ Whether you’re here for your daily chai or curious to try something new, welco
     
     <!-- ORDER SECTION -->
     <section id="order">
-        <h2 class="fusion-title">Experience Artisanal Chai</h2>
-        <p style="margin-bottom: 30px; max-width: 600px; margin: 0 auto 30px;">
+        <h2 class="fusion-title" style="color: white;">Experience Artisanal Chai</h2>
+        <p style="margin-bottom: 30px; max-width: 600px; margin: 0 auto 30px; color: rgba(255,255,255,0.9);">
             Visit us today for a taste of our carefully crafted chai creations
         </p>
         <button class="order-btn">ORDER NOW</button>
@@ -469,6 +602,17 @@ Whether you’re here for your daily chai or curious to try something new, welco
         
         document.querySelector('.order-btn').addEventListener('click', () => {
             alert("Online ordering coming soon! Visit us at 123 Spice Street NW, Calgary");
+        });
+        
+        // Add subtle animations to menu cards
+        const menuCards = document.querySelectorAll('.menu-col');
+        menuCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.15)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '0 5px 25px rgba(0,0,0,0.08)';
+            });
         });
     </script>
 </body>
